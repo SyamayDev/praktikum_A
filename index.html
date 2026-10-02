@@ -1,21 +1,124 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>halo</title>
+
+    <title>Halo</title>
+
     <style>
-        .halo{
-            font-size: 100px;
-            color: red;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #0f172a,
+                #1e1b4b,
+                #312e81
+            );
+
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            padding: 50px 30px;
+
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.35);
+
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        marquee {
+            width: 100%;
+        }
+
+        .halo {
+            font-size: clamp(60px, 12vw, 130px);
+            font-weight: 800;
+
+            background: linear-gradient(
+                90deg,
+                #ff4d6d,
+                #ff758f,
+                #ffd166,
+                #ff4d6d
+            );
+
+            background-size: 300%;
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            animation: gradient 4s linear infinite;
+
+            text-shadow: 0 0 30px rgba(255, 77, 109, 0.25);
+        }
+
+        .description {
+            margin-top: 25px;
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 300%;
+            }
         }
     </style>
 </head>
+
 <body>
-    <!-- marquee -->
-    <marquee behavior="" direction="right">
-        <h1 class="halo">halo</h1>
-    </marquee>l
+
+    <div class="container">
+
+        <div class="subtitle">
+            Welcome
+        </div>
+
+        <marquee direction="right" scrollamount="8">
+            <h1 class="halo">HALO 👋</h1>
+        </marquee>
+
+        <p class="description">
+            Selamat datang di halaman HTML sederhana saya.
+        </p>
+
+    </div>
+
 </body>
 </html>
+```
